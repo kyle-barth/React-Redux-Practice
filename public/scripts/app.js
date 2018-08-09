@@ -51,6 +51,13 @@ var Counter = function (_React$Component) {
                     count: 0
                 };
             });
+            // This doesnt give the expected output due to asynchronous operation
+            // this.setState({
+            //     count: 0
+            // })
+            // this.setState({
+            //     count: this.state.count + 1
+            // })
         }
     }, {
         key: 'render',
