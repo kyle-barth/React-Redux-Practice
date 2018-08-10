@@ -6,7 +6,7 @@ class IndecisionApp extends React.Component {
         this.handleAddOption = this.handleAddOption.bind(this)
         this.handleDeleteOption = this.handleDeleteOption.bind(this)
         this.state = {
-            options: props.options
+            options: [] // DP(2/2) props.options
         }
     }
 
@@ -86,9 +86,12 @@ class IndecisionApp extends React.Component {
             </div>
         )
     }
-}; IndecisionApp.defaultProps = {
-    options: []
 }
+
+// How you would set default prop values DP(1/2)
+// IndecisionApp.defaultProps = {
+//     options: []
+// }
 
 const Header = (props) => {
     return (
