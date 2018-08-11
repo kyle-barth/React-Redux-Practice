@@ -1,13 +1,9 @@
-// import './utils.js'
-// import {square, add, sub} from './utils.js'
+import validator from 'validator'
 
-// console.log('app.js is running')
-// console.log(square(4))
-// console.log(add(4, 6))
-// console.log(sub(100, 81))
+console.log(validator.isEmail('foo@bar.com'), validator.isEmail('foo'))
 
-import isSenior, { isAdult, canDrink } from "./person"
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-console.log(isAdult(21))
-console.log(canDrink(21))
-console.log(isSenior(21))
+const template = React.createElement('p', {}, 'testing 123')
+ReactDOM.render(template, document.getElementById('app'))
