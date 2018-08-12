@@ -7,15 +7,8 @@ import Action from './Action'
 import Options from './Options'
 
 export default class IndecisionApp extends React.Component {
-    constructor(props) {
-        super(props)
-        this.handleDeleteOptions = this.handleDeleteOptions.bind(this)
-        this.handlePick = this.handlePick.bind(this)
-        this.handleAddOption = this.handleAddOption.bind(this)
-        this.handleDeleteOption = this.handleDeleteOption.bind(this)
-        this.state = {
-            options: [] // DP(2/2) props.options
-        }
+    state = {
+        options: [] // DP(2/2) props.options
     }
 
     componentDidMount() {
@@ -34,29 +27,23 @@ export default class IndecisionApp extends React.Component {
         }
     }
     componentWillUnmount() {
-        console.log('componentWillUnmount')
+        // console.log('componentWillUnmount')
     }
 
-    handleDeleteOptions() {
+    handleDeleteOptions = () => {
         this.setState(() => ({options: []}))
-        // Same as ...
-        // this.setState(() =>{
-        //     return {
-        //         options: []
-        //     }
-        // })
     }
-    handleDeleteOption(optionToRemove) {
+    handleDeleteOption = (optionToRemove) => {
         this.setState((prevState) => ({
             options: prevState.options.filter((option) => optionToRemove !== option)
         }))
     }
-    handlePick() {
+    handlePick = () => {
         const randNum = Math.floor(Math.random() * this.state.options.length)
         const option = this.state.options[randNum]
         alert(option);
     }
-    handleAddOption(option) {
+    handleAddOption = (option) => {
         if (!option) {
             return 'Enter valid value to add item'
         } else if (this.state.options.indexOf(option) > -1) {
@@ -95,8 +82,3 @@ export default class IndecisionApp extends React.Component {
         )
     }
 }
-
-// How you would set default prop values DP(1/2)
-// IndecisionApp.defaultProps = {
-//     options: []
-// }
