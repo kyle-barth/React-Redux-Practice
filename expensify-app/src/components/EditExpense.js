@@ -1,8 +1,8 @@
 import React from 'react'
 
-const EditExpense = () => (
+const EditExpense = (props) => (
     <div>
-        This is from my edit expense component
+        Editing Expense {props.match.params.id}
     </div>
 )
 
